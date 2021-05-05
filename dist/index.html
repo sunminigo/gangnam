@@ -76,7 +76,7 @@
 				<li id="introduce" class="gnb">
 					<button type="button"
 					        ref="introduce"
-					        onclick="changeIframeUrl('introduce')"
+					        onclick="changeIframeUrl('introduce_1')"
 					        alt="버튼 구청소개 메뉴"
 					        tabindex="2"
 					>구청소개</button>
@@ -100,7 +100,7 @@
 				<li id="traffic" class="gnb">
 					<button type="button"
 					        ref="traffic"
-					        onclick="changeIframeUrl('notice')"
+					        onclick="changeIframeUrl('notice_list')"
 					        alt="버튼 공지사항 메뉴"
 					        tabindex="5"
 					>공지사항</button>
@@ -215,6 +215,38 @@
 				   alt="버튼 위치보기"
 				   tabindex="5"
 				>위치보기</a>
+			</div>
+		</nav>
+	</section>
+
+	<section class="navigation_box">
+		<nav id="lnb_notice" class="lnb_box">
+			<div class="lnb btn_back">
+				<a onclick="changeIframeUrl('back')"
+				   alt="버튼 뒤로가기"
+				   tabindex="2"
+				><img src="./assets/images/icon/arrow_left.png" alt="뒤로가기" /></a>
+			</div>
+			<div class="lnb">
+				<a onclick="changeIframeUrl('notice_list')"
+				   alt="버튼 공지사항 메뉴"
+				   tabindex="3"
+				   ref="notice_list"
+				>공지사항</a>
+			</div>
+			<div class="lnb">
+				<a onclick="changeIframeUrl('notice_event')"
+				   alt="버튼 행사 메뉴"
+				   tabindex="4"
+				   ref="notice_event"
+				>행사</a>
+			</div>
+			<div class="lnb">
+				<a onclick="changeIframeUrl('notice_info')"
+				   alt="버튼 정보마당 메뉴"
+				   tabindex="5"
+				   ref="notice_info"
+				>정보마당</a>
 			</div>
 		</nav>
 	</section>

@@ -291,6 +291,19 @@ console.log('page', text)
 				}
 				break;
 
+			case 'notice':
+				var lnbList = document.getElementById('lnb_notice').querySelectorAll('.lnb')
+
+				document.getElementById('lnb_notice').style.display = 'flex';
+				document.getElementById('gnb_main').style.display = 'none';
+
+				for(let i=0; i<lnbList.length; i++) {
+					lnbList[i].querySelector('a').getAttribute('ref') == url
+						? lnbList[i].classList.add('active')
+						: lnbList[i].classList.remove('active')
+				}
+				break;
+
 			case 'rental':
 				var lnbList = document.getElementById('gnb_main').querySelectorAll('.gnb')
 				console.log(url)
