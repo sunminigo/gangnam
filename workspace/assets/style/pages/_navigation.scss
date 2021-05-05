@@ -1,0 +1,79 @@
+/* 네비게이션 */
+.navigation_box {
+	@include position(absolute, $b: 0, $l: 0);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 116px;
+	background: #fff;
+
+	.gnb_box {
+		position: relative;
+		display: flex;
+		align-items: center;
+		height: auto;
+		z-index: 1;
+
+		& > .gnb {
+			position: relative;
+			height: 100%;
+
+			& + .gnb {
+				margin-left: 12px;
+			}
+			&.active {
+				background: $brandColor-yellow;
+				color: $default;
+			}
+			& > button {
+				position: relative;
+				text-align: center;
+				width: 281px;
+				height: 76px;
+				background: $default;
+				border-radius: 8px;
+				color: $white;
+				font-size: 1.625rem; /* 26px */
+			}
+		}
+	}
+}
+.lnb_box {
+	display: none;
+	//@include position-translate(absolute, $b: 0, $l: 50%, $x: -50%, $y: 0);
+	text-align: center;
+	//overflow: hidden;
+	z-index: 1;
+
+	& > .lnb:not(:first-child) {
+		position: relative;
+		text-align: center;
+		width: 281px;
+		height: 76px;
+		line-height: 76px;
+		background: $default;
+		border-radius: 8px;
+		font-size: 1.625rem; /* 26px */
+
+		& + .lnb {
+			margin-left: 12px;
+		}
+		&.active {
+			background: $brandColor-yellow;
+
+			a {
+				color: $default;
+			}
+		}
+		a {
+			display: block;
+			color: $white;
+		}
+	}
+	.btn_back {
+		display: flex;
+		align-items: center;
+		margin-right: 37px;
+	}
+}

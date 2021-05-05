@@ -1,0 +1,41 @@
+/* 메인페이지 */
+.main_box {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	max-width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+
+	.visual_wrap {
+		width: 100%;
+
+		.slick-track {
+			display: flex;
+			align-items: center;
+		}
+		.slick-list {
+			height: 587px;
+		}
+		.slick-slide {
+			img {
+				margin: 0 auto !important;
+			}
+		}
+
+		.slick-dots {
+			bottom: -80px;
+
+			li {
+				&.slick-active {
+					button:before {
+						background: $info;
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}

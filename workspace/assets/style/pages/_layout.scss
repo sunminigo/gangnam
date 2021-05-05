@@ -1,0 +1,141 @@
+/* ---------------------------------------------
+	text color
+---------------------------------------------- */
+.text-danger {
+	color: $danger;
+}
+.brandColor_blue {
+	color: $brandColor-blue;
+}
+.brandColor_green {
+	color: $brandColor-green;
+}
+.brandColor_orange {
+	color: $brandColor-orange;
+}
+.brandColor_yellow {
+	color: $brandColor-yellow;
+}
+.brandColor_purple {
+	color: $brandColor-purple;
+}
+
+
+/* ---------------------------------------------
+	layout
+---------------------------------------------- */
+/* LAYOUT */
+html, body {
+	font-size: 16px;
+}
+html.controlFontSize,
+body.controlFontSize {
+	font-size: 20px;
+}
+iframe body {
+	background: #EEEEEE;
+}
+
+.wrapper {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+}
+.header_wrap {
+	@include position(absolute, $t: 0, $l: 72px);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: calc(100% - 72px - 40px);
+	height: 86px;
+}
+.container_wrap {
+	position: relative;
+	width: 100%;
+	padding: 86px 40px 116px 72px;
+	overflow: hidden;
+}
+.container_box {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	border-radius: 8px;
+	background: #EEEEEE;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+/* SLICK SLIDER CSS */
+.slick-slider {
+	.slick-arrow {
+		@include position-translate(absolute, $t: 50%, $l: 0, $x: 0, $y: -50%);
+		width: 108px;
+		height: 108px;
+
+		&.prev {
+			left: -125px;
+		}
+		&.next {
+			left: unset;
+			right: -125px;
+		}
+	}
+	.slick-dots {
+		display: flex;
+		justify-content: center;
+		bottom: -40px;
+
+		li {
+			width: 42px;
+			height: 12px;
+			margin: 0 12px;
+			border-radius: 30px;
+
+			&.slick-active {
+				button:before {
+					background: $brandColor-blue;
+					opacity: 1;
+				}
+			}
+			button {
+				width: 42px;
+				height: 12px;
+
+				&:before {
+					content: '';
+					width: 42px;
+					height: 12px;
+					background: rgba(0, 0, 0, 0.26);
+					border-radius: 30px;
+					opacity: 0.4;
+				}
+			}
+		}
+	}
+}
+
+/* CARD_BOX - SLICK SLIDER CSS */
+.card_box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.card_slider {
+		width: 1200px;
+		margin: 0 auto;
+
+		&.slick-slider {
+			.slick-list {
+				min-height: 751px;
+				margin: 9px;
+
+				.slick-slide {
+					margin: 9px;
+				}
+			}
+		}
+	}
+}

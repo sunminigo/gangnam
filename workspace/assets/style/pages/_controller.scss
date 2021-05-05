@@ -1,0 +1,22 @@
+/* 컨트롤버튼 */
+.control_box {
+	@include position-translate(absolute, $t: 50%, $l: 0, $x: 0, $y: -50%);
+	text-align: center;
+	width: 72px;
+	z-index: 11;
+
+	.btn_control {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 72px;
+		height: 72px;
+
+		& + .btn_control {
+			margin-top: 13px;
+		}
+	}
+	#control_text {
+		margin-top: 24px;
+	}
+}

@@ -1,0 +1,42 @@
+/*---------------
+	TABLE
+---------------*/
+table {
+	text-align: center;
+	width: 100%;
+	border-bottom: 1px solid #AAAAAA;
+
+	thead {
+		th {
+			padding: 20px 27px 15px;
+			font-size: 1.5rem; /* 24px */
+			border-top: 0px;
+		}
+	}
+	tbody {
+		th {
+			padding: 20px 27px 18px;
+			font-size: 1.5rem; /* 24px */
+			background: #EEEEEE;
+			border-top: 1px solid #AAAAAA;
+			border-left: 1px solid #AAAAAA;
+		}
+		td {
+			border-left: 0;
+			padding: 20px 27px 18px;
+			border-top: 1px solid #AAAAAA;
+			border-right: 1px solid #AAAAAA;
+			border-left: 1px solid #AAAAAA;
+			font-size: 1.75rem; /* 28px */
+			font-weight: 400;
+
+			& + td {
+				border-left: 0px;
+			}
+			p {
+				font-size: 1.75rem;
+				font-weight: 400;
+			}
+		}
+	}
+}

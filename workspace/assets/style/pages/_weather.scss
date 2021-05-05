@@ -1,0 +1,56 @@
+.weather_wrap {
+	text-align: center;
+	display: flex;
+	align-items: center;
+	height: 79px;
+
+	& > div {
+		position: relative;
+
+		& + div:before  {
+			@include position-translate(absolute, $t: 50%, $l: 0, $x: 0, $y: -50%);
+			content: '';
+			width: 1px;
+			height: 31px;
+			background: $light;
+		}
+		&:first-child {
+			margin-right: 8px;
+			padding-left: 0;
+		}
+	}
+	.today_info {
+		padding-right: 8px;
+
+		&__date {
+			font-size: 16px;
+		}
+		&__time {
+			margin-top: 8px;
+			font-size: 30px;
+			font-weight: 800;
+		}
+	}
+	.temp_info {
+		display: flex;
+		align-items: center;
+		padding-left: 8px;
+
+		&__img {
+			width: 58px;
+			height: 58px;
+			margin-right: 8px;
+
+			img {
+				width: 100%;
+			}
+		}
+		&__txt {
+			font-size: 40px;
+
+			.location {
+				font-size: 16px;
+			}
+		}
+	}
+}
