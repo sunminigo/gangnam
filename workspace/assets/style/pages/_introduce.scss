@@ -1,12 +1,115 @@
 /* 센터안내 */
 .page_introduce {
-	.banner_box {
-		width: 1220px;
+	.introduce_1 {
+		width: 1635px;
 		margin: 0 auto;
 
+		.banner_box {
+			text-align: center;
+			height: 305px;
+
+			img {
+				object-fit: fill;
+			}
+		}
+		.intro_box {
+			margin-top: 62px;
+
+			ul {
+				position: relative;
+				display: flex;
+				flex-wrap: wrap;
+
+				&:before {
+					content: "";
+					@include position-translate(absolute, $t:60%, $l:0, $x:0, $y:-50%);
+					width: 100%;
+					height: 1px;
+					background: #C4C4C4;
+				}
+				&:after {
+					content: "";
+					position: absolute;
+					top: 58%;
+					left: 35%;
+					transform: rotate(90deg);
+					width: 25%;
+					height: 1px;
+					background: #C4C4C4;
+				}
+			}
+			li {
+				display: flex;
+				width: 50%;
+				margin: 44px 0 0;
+				font-size: 18px;
+				font-weight: 700;
+				line-height: 180%;
+			}
+			.txt {
+				width: 230px;
+				margin-right: 32px;
+				font-size: 19px;
+
+				&:before {
+					content: "";
+					display: block;
+					width: 28px;
+					height: 6px;
+					margin-bottom: 5px;
+					background: #2460AF;
+				}
+			}
+			.sub_txt {
+				margin-top: 16px;
+			}
+		}
+	}
+
+	.introduce_2 {
+		width: 1635px;
+		margin: 55px auto 0;
+
+		h2 {
+			font-size: 30px;
+
+			&:before {
+				content: "";
+				display: block;
+				width: 28px;
+				height: 6px;
+				margin-bottom: 5px;
+				background: #2460AF;
+			}
+		}
 		img {
+			margin-top: 21px;
 			object-fit: fill;
 		}
 	}
-	.intro_box {}
+
+	.introduce_3 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+
+		& > div {
+			width: 380px;
+			height: 70%;
+			font-size: 26px;
+			line-height: 170%;
+
+			& + div {
+				margin-left: 70px;
+			}
+			img {
+				display: inline-block;
+				width: 100%;
+				height: 380px;
+				margin-bottom: 41px;
+				object-fit: fill;
+			}
+		}
+	}
 }
