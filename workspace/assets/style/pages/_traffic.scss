@@ -3,18 +3,16 @@
 	.traffic_box {
 		display: flex;
 		justify-content: center;
+		align-items: center;
+		height: 100%;
 		padding: 18px;
 	}
 }
 #bus {
 	.step_box {
-		flex: 1;
 		text-align: center;
-		width: 50%;
-		//height: 882px;
+		width: 689px;
 		padding: 27px 15px;
-		background: #fff;
-		border: 1px solid #A8A8A8;
 		border-radius: 8px;
 
 		& + .step_box {
@@ -125,14 +123,10 @@
 		.bus_list {
 			display: flex;
 			flex-wrap: wrap;
-			//height: calc(100% - 177px);
 			margin-left: -10px;
-			//overflow: hidden;
 
 			li {
 				display: table;
-				//text-align: center;
-				//display: flex;
 				width: calc(50% - 10px);
 				height: 98px;
 				margin: 10px 0 0 10px;
@@ -140,8 +134,8 @@
 				border: 1px solid #646464;
 
 				&.bus_blue .number {background: #0074E6;}
-				&.bus_blue2 .number {background: #00ACC4;}
 				&.bus_green .number {background: #00B43D;}
+				&.bus_light_green .number {background: #87BE3C;}
 				&.bus_red .number {background: #CB0031;}
 				&.active {
 					.time {
@@ -163,6 +157,7 @@
 				.time {
 					font-size: 1.875rem; /* 30px */
 					font-weight: bold;
+					background: #fff;
 				}
 			}
 		}
@@ -174,7 +169,7 @@
 	.step_box {
 		position: relative;
 		width: 1454px;
-		height: 436px;
+		height: 390px;
 		padding: 20px;
 		background: #444444;
 		border-radius: 8px;
@@ -214,25 +209,27 @@
 		}
 	}
 	.subway_info {
-		@include position-translate(absolute, $b: 45px, $l: 50%, $x: -50%, $y: 0);
+		@include position-translate(absolute, $b: 15px, $l: 50%, $x: -50%, $y: 0);
 		width: 1263px;
 
 		.subway_step_box {
 			position: relative;
-			height: 43px;
+			height: 40px;
 
 			.subway_img {
 				@include position(absolute, $t:0, $l: 0);
+				width: 123px;
+				height: 35px;
 
-				&.step_1 {left: 7%;}
+				&.step_1 {left: 5%;}
 				&.step_1-1 {left: 16.5%;}
-				&.step_2 {left: 27%;}
+				&.step_2 {left: 22%;}
 				&.step_2-1 {left: 36.5%;}
-				&.step_3 {left: 47%;}
+				&.step_3 {left: 40%;}
 				&.step_3-1 {left: 56.5%;}
-				&.step_4 {left: 67%;}
+				&.step_4 {left: 61%;}
 				&.step_4-1 {left: 76.5%;}
-				&.step_5 {left: 86%;}
+				&.step_5 {left: 83%;}
 				&.step_5-1 {left: 95%;}
 			}
 		}
@@ -240,30 +237,45 @@
 			.subway_img {
 			  transform: rotateY(180deg);
 
-				&.step_1 {left: 5%;}
-				&.step_1-1 {left: 14.5%;}
+				&.step_1 {left: 8%;}
+				&.step_1-1 {left: 29.5%;}
 				&.step_2 {left: 24.5%;}
 				&.step_2-1 {left: 33.5%;}
-				&.step_3 {left: 44%;}
+				&.step_3 {left: 47%;}
 				&.step_3-1 {left: 53%;}
-				&.step_4 {left: 63%;}
+				&.step_4 {left: 64%;}
 				&.step_4-1 {left: 73.5%;}
-				&.step_5 {left: 84.5%;}
+				&.step_5 {left: 84%;}
 				&.step_5-1 {left: 93%;}
 			}
 			.platform_list:before {
-				transform: rotateY(180deg);
+				transform: rotateY(0deg);
+			}
+			.mark_fast {
+				position: relative;
+				top: -45px;
+
+				&:before {
+					content: '급행';
+					@include position(absolute, $t:0, $l: 0);
+					font-weight: 800;
+					font-size: 14px;
+					background: #FF0000;
+					border: 2px solid #FFFFFF;
+					border-radius: 40px;
+					z-index: 10;
+				}
 			}
 		}
 		.platform_list {
 			position: relative;
 			display: flex;
 			justify-content: space-around;
-			margin-top: 30px;
 
 			&:before {
 				content: "";
-				@include position(absolute, $t: 7px, $l: 0);
+				@include position(absolute, $t: 10px, $l: 0);
+				transform: rotateY(180deg);
 				width: 100%;
 				height: 44px;
 				background: url("../images/banner/subway_line.png") no-repeat 0 0 / 100%;
@@ -275,18 +287,26 @@
 				&:before {
 					content: "";
 					display: block;
-					width: 40px;
-					height: 40px;
-					margin: 0 auto 28px;
+					width: 37px;
+					height: 37px;
+					margin: 0 auto 5px;
 					background: #fff;
 					border: 8px solid #444444;
 					border-radius: 50%;
 					z-index: 1;
 				}
-				&.active {
+				&.fast {
 					&:before {
 						background: #FF4020;
 						border: 8px solid #fff;
+					}
+				}
+				&.destination {
+					&:before {
+						content: "";
+						width: 37px;
+						height: 37px;
+						background: #FFDA00;
 					}
 				}
 				span {
@@ -295,6 +315,8 @@
 					background: #FFFFFF;
 					border: 7px solid #B79A45;
 					border-radius: 60px;
+					font-size: 2.125rem; /* 34px */
+					font-weight: 800;
 				}
 			}
 		}

@@ -33,7 +33,7 @@ body.controlFontSize {
 	font-size: 20px;
 }
 iframe body {
-	background: #EEEEEE;
+	background: rgba($lightGrey1, .5);
 }
 
 .wrapper {
@@ -63,7 +63,7 @@ iframe body {
 	height: 100%;
 	margin: 0 auto;
 	border-radius: 8px;
-	background: #EEEEEE;
+	background: rgba($lightGrey1, .5);
 	overflow: hidden;
 	overflow-y: auto;
 }
