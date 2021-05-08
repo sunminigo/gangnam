@@ -79,7 +79,7 @@ $(function() {
 			$(this).addClass('active');
 		}
 	});
-	
+
 	$('.btn_back').on('click', function(){
 		$('.gnb_wrap').removeClass('active');
 		$('.lnb_wrap').removeClass('active');
@@ -226,32 +226,42 @@ function textToSpeech( text ) {
  *****************************************/
 function changeIframeUrl(url) {
 	var getIframe = document.getElementById('iframe_content');
-			getIframe.src = 'iframe/'+url+'.html';
-	
+
+	if (url == 'back') {
+		window.history.back();
+
+		if (getIframe.src.indexOf('/')) {
+			$('.lnb_box').css('display', 'none');
+			$('.gnb_main').css('display', 'flex');
+		}
+	}
+
+	getIframe.src = 'iframe/'+url+'.html';
+
 	if (getIframe.src.indexOf(url) != -1) {
 		let text = url.split('_')[0]
-		
+
 		switch(text) {
 			case 'introduce':
 				var lnbList = document.getElementById('lnb_introduce').querySelectorAll('.lnb')
-				
+
 				document.getElementById('lnb_introduce').style.display = 'flex';
 				document.getElementById('gnb_main').style.display = 'none';
-				
+
 				for(let i=0; i<lnbList.length; i++) {
 					lnbList[i].querySelector('a').getAttribute('ref') == url
 						? lnbList[i].classList.add('active')
 						: lnbList[i].classList.remove('active')
 				}
 				break;
-				
+
 			case 'floor':
 				var lnbList = document.getElementById('lnb_floor').querySelectorAll('.lnb')
 				var targeted_popup_class = $(this).attr('data-popup-close');
 
 				document.getElementById('lnb_floor').style.display = 'flex';
 				document.getElementById('gnb_main').style.display = 'none';
-				
+
 				for(let i=0; i<lnbList.length; i++) {
 					lnbList[i].querySelector('a').getAttribute('ref') == url
 						? lnbList[i].classList.add('active')
@@ -259,16 +269,16 @@ function changeIframeUrl(url) {
 				}
 				if ($('.rental_detail_popup').hasClass('active')) {
 					var targeted_popup_class = $('.rental_detail_popup').attr('data-popup-close');
-					
+
 					$('.rental_detail_popup').fadeOut('fast').removeClass('active');
 					$('.zoom_box').removeClass('box');
 					$('.btn_one').removeClass('box');
 				}
 				break;
-			
+
 			case 'traffic':
 				var lnbList = document.getElementById('lnb_traffic').querySelectorAll('.lnb')
-				
+
 				document.getElementById('lnb_traffic').style.display = 'flex';
 				document.getElementById('gnb_main').style.display = 'none';
 
@@ -278,7 +288,7 @@ function changeIframeUrl(url) {
 						: lnbList[i].classList.remove('active')
 				}
 				break;
-				
+
 			case 'rental':
 				var lnbList = document.getElementById('gnb_main').querySelectorAll('.gnb')
 				console.log(url)
