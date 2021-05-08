@@ -232,7 +232,7 @@ function changeIframeUrl(url) {
 
 		if (getIframe.src.indexOf('/')) {
 			$('.lnb_box').css('display', 'none');
-			$('.gnb_main').css('display', 'flex');
+			$('#gnb_main').css('display', 'flex');
 		}
 	}
 
