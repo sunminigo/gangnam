@@ -17,10 +17,16 @@
 				h3 {
 					font-size: 50px;
 					font-weight: 800;
-					color: #2460AF;
-				}
-				&__icon {
-					margin-top: 10px;
+					color: #444;
+
+					&:before {
+						content: "";
+						display: block;
+						width: 37px;
+						height: 8px;
+						margin-bottom: 9px;
+						background: $brandColor-yellow;
+					}
 				}
 			}
 			.room {
@@ -29,6 +35,13 @@
 				width: calc(100% - 170px);
 				padding: 24px;
 
+				&:before {
+					content: "";
+					display: block;
+					width: 37px;
+					height: 8px;
+					background: #C4C4C4;
+				}
 				&__eroom {
 					display: flex;
 					align-items: center;
@@ -39,52 +52,25 @@
 					& > li {
 						width: 180px;
 					}
-					/*
-					& + li {
-						margin-left: 16px;
-					}
-					*/
 				}
 				&__company {
 					display: flex;
+					flex-wrap: wrap;
+					margin: -30px 0 0 -40px;
 					padding: 20px;
 
 					& > li {
 						display: flex;
-						width: calc(100% / 3);
+						text-align: center;
+						margin: 30px 0 0 40px;
 
-						.logo {
-							width: 52px;
-							height: 52px;
-							overflow: hidden;
-
-							img {
-								width: 100%;
-								height: 100%;
-								object-fit: contain;
-							}
-						}
 						.company {
-							line-height: 160%;
-							margin-left: 14px;
-							font-size:1.125rem ; /* 18px */
+							font-size: 0.875rem ; /* 14px */
 
 							&__title {
 								margin-bottom: 10px;
-								font-size: 1.375rem; /* 22px */
+								font-size: 1.5rem; /* 24px */
 								font-weight: bold;
-							}
-						}
-
-						& + li {
-							//margin-left: 16px;
-
-							&:before {
-								content: '';
-								width: 1px;
-								heigth: 110px;
-								margin-right: 16px;
-								background: $light;
 							}
 						}
 					}
