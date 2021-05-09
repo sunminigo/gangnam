@@ -4,31 +4,22 @@
 table {
 	text-align: center;
 	width: 100%;
-	border-top: 2px solid #000000;
 
 	thead {
 		th {
 			height: 80px;
 			padding: 14px 27px;
 			font-size: 1.5rem; /* 24px */
-			border-top: 0px;
 			background: #fff;
+			border-top: 2px solid #000000;
 		}
 	}
 	tbody {
 		.empty {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			height: 100%;
-		}
-		th {
-			height: 80px;
-			padding: 14px;
-			font-size: 1.5rem; /* 24px */
+			height: 500px;
 		}
 		td {
-			border-left: 0;
+			height: 80px;
 			padding: 14px;
 			border-top: 1px solid #C4C4C4;
 			font-size: 1.75rem; /* 28px */
@@ -37,6 +28,9 @@ table {
 			p {
 				font-size: 1.75rem; /* 28px */
 				font-weight: 400;
+			}
+			.title {
+				text-align: left;
 			}
 		}
 	}
