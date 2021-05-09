@@ -191,19 +191,37 @@
 	}
 	.subway_table {
 		@include position(absolute, $t: 10px, $r: 10px);
+		text-align: center;
+		border-bottom: 1px solid #AAAAAA;
 		width: 684px;
 		height: 135px;
 		color: #fff;
 
-		td {
-			color: #fff;
+		tbody {
+			td {
+				border-left: 0;
+				padding: 20px 27px 18px;
+				border-top: 1px solid #AAAAAA;
+				border-right: 1px solid #AAAAAA;
+				border-left: 1px solid #AAAAAA;
+				font-size: 1.75rem; /* 28px */
+				font-weight: 400;
+				color: #fff;
 
-			&.place {
-				text-align: left;
-			}
-			&.coming_soon {
-				&.active {
-					color: #FFC700;
+				& + td {
+					border-left: 0px;
+				}
+				&.place {
+					text-align: left;
+				}
+				&.coming_soon {
+					&.active {
+						color: #FFC700;
+					}
+				}
+				p {
+					font-size: 1.75rem;
+					font-weight: 400;
 				}
 			}
 		}
