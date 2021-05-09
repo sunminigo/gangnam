@@ -21,7 +21,6 @@
 		@include position-translate(absolute, $t: 50%, $l: 120px, $x: 0, $y: 120%);
 		width: calc(100% - 172px);
 		height: 95%;
-		border-top: 8px solid $brandColor-yellow;
 		background: #fff;
 		box-shadow: $box-shadow-2;
 		border-radius: 8px;
@@ -36,15 +35,17 @@
 			padding: 0 26px;
 			font-size: 32px;
 
-			h2 {
-				font-size: 32px;
-			}
+			h2 {font-size: 32px;}
 		}
 		&__container {
 			height: calc(100% - 203px);
-			padding: 0 26px;
+			padding: 32px 100px 63px;
 			background: $lightGrey2;
+			font-size: 1.5rem; /* 24px */
+			line-height: 160%;
 			overflow-y: auto;
+
+			b,strong {font-weight: bolder;}
 		}
 		&__footer {
 			text-align: center;

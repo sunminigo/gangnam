@@ -70,10 +70,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr class="empty">
-						<td colspan="5">공지사항이 없습니다.</td>
-					</tr>
-					<tr>
+					<tr data-popup-open="notice_view">
 						<td>1</td>
 						<td class="title">제목</td>
 						<td>1</td>
@@ -84,6 +81,8 @@
 			</table>
 		</div>
 	</section>
+
+	@@include('../../include/popup_notice_view.html')
 
 </body>
 </html>

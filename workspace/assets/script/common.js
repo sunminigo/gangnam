@@ -22,18 +22,28 @@ $(function() {
 		prevArrow: '<button type="button" class="prev" alt="버튼 이전"><img src="../assets/images/icon/arrow_angle_left.png" alt="이전"></button>',
 		nextArrow: '<button type="button" class="next" alt="버튼 다음"><img src="../assets/images/icon/arrow_angle_right.png" alt="다음"></button>',
 	});
+	$('.notice_info_slider').slick({
+		lazyLoad: 'ondemand',
+		autoplay: false,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplaySpeed: 5000,
+		arrows: true,
+		dots: false,
+		prevArrow: '<button type="button" class="prev" alt="버튼 이전"><img src="../assets/images/icon/arrow_angle_left.png" alt="이전"></button>',
+		nextArrow: '<button type="button" class="next" alt="버튼 다음"><img src="../assets/images/icon/arrow_angle_right.png" alt="다음"></button>',
+	});
 
 
 	/****************************************
 	* POPUP OPEN CLOSE
 	*****************************************/
 	$('[data-popup-open]').on('click', function(e)  {
+		console.log('1111111111')
 		var targeted_popup_class = $(this).attr('data-popup-open');
+		console.log('1111111111', targeted_popup_class)
 
 		$('[data-popup="' + targeted_popup_class + '"]').fadeIn(600).addClass('active');
-		$('.card_slider').slick('refresh');
-		$('.room_view').slick('refresh');
-		$('.rooms').slick('refresh');
 		$('.zoom_box').addClass('box');
 		$('.btn_one').addClass('box');
 
@@ -56,20 +66,6 @@ $(function() {
 		$('html, body').toggleClass('controlFontSize');
 		$('#iframe_content').contents().find('html, body').toggleClass('controlFontSize');
 	});
-
-	/****************************************
-	 * RANDOM COLOR
-	let color = ['#127BDC', '#AF1280', '#FFB500', '#7CD800'];
-
-	for(var i =0;i < $('.randomColor').length;i++){
-		getColor = function(){
-			let result = color[Math.floor(Math.random()*color.length)];
-			return result;
-		}
-		var localObj = getColor();
-		$('.randomColor:eq('+i+')').css('border-left-color', localObj );
-	}
-	 *****************************************/
 
 	/****************************************
 	 * FLOOR BUTTON
