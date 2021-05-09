@@ -11,82 +11,18 @@ $(function() {
 		prevArrow: '<button type="button" class="prev"><img src="../assets/images/icon/arrow_angle_left.png" alt="이전"></button>',
 		nextArrow: '<button type="button" class="next"><img src="../assets/images/icon/arrow_angle_right.png" alt="다음"></button>',
 	});
-	$('.card_slider').slick({
-		lazyLoad: 'ondemand',
-		autoplay: false,
-		rows: 2,
-		slidesToShow: 3,
-		slidesToScroll: 3,
-		autoplaySpeed: 5000,
-		arrows: true,
-		dots: true,
-		prevArrow: '<button type="button" class="prev" alt="버튼 이전"><img src="../assets/images/icon/arrow_angle_left.png" alt="이전"></button>',
-		nextArrow: '<button type="button" class="next" alt="버튼 다음"><img src="../assets/images/icon/arrow_angle_right.png" alt="다음"></button>',
-	});
-	$('.room_view').slick({
+	$('.notice_slider').slick({
 		lazyLoad: 'ondemand',
 		autoplay: false,
 		slidesToShow: 1,
-		arrows: false,
-		asNavFor: '.rooms'
-	});
-	$('.rooms').slick({
-		lazyLoad: 'ondemand',
-		slidesToShow: 5,
-		arrows: false,
-		focusOnSelect: true,
-		asNavFor: '.room_view'
+		slidesToScroll: 1,
+		autoplaySpeed: 5000,
+		arrows: true,
+		dots: false,
+		prevArrow: '<button type="button" class="prev" alt="버튼 이전"><img src="../assets/images/icon/arrow_angle_left.png" alt="이전"></button>',
+		nextArrow: '<button type="button" class="next" alt="버튼 다음"><img src="../assets/images/icon/arrow_angle_right.png" alt="다음"></button>',
 	});
 
-	/****************************************
-	 * NAVIGATION
-	var url = window.location.pathname;
-	var urlName = url.replace('/', '').split('.')[0];
-	var getIframe = document.getElementsByTagName('iframe');
-
-	var iframeUrl = $('#iframe_content').attr('src');
-
-	$('.lnb_box').hide();
-	$('.gnb').each(function () {
-		var ref = $(this).children('button').attr('ref');
-
-		if (iframeUrl.indexOf(ref) != -1) {
-			$(this).addClass('active');
-			$(this).find('.lnb_wrap').addClass('active');
-		}
-
-		$(this).on('click', function() {
-			var noMenu = $('.lnb_box li').not('li:nth-child(2)');
-
-			if ($(this).children().hasClass('lnb_wrap')) {
-				$(this).addClass('active');
-				$(this).find('.lnb_wrap').addClass('active');
-				$('.gnb').not($(this)).removeClass('active').find('.lnb_wrap').removeClass('active');
-				return true;
-			} else {
-				$('.gnb_wrap').removeClass('active');
-				return false;
-			}
-		});
-	});
-	$('.lnb').each(function () {
-		var href = $(this).find('a').attr('href');
-
-		if (href != undefined) {
-			href = href.split('.')[0]
-		}
-		if (iframeUrl.indexOf(href) != -1) {
-			$(this).addClass('active');
-		}
-	});
-
-	$('.btn_back').on('click', function(){
-		$('.gnb_wrap').removeClass('active');
-		$('.lnb_wrap').removeClass('active');
-		$('.lnb').removeClass('active');
-		return false;
-	});
-	 *****************************************/
 
 	/****************************************
 	* POPUP OPEN CLOSE
@@ -289,16 +225,19 @@ function changeIframeUrl(url) {
 				}
 				break;
 
-			case 'rental':
-				var lnbList = document.getElementById('gnb_main').querySelectorAll('.gnb')
-				console.log(url)
+			case 'notice':
+				var lnbList = document.getElementById('lnb_notice').querySelectorAll('.lnb')
+
+				document.getElementById('lnb_notice').style.display = 'flex';
+				document.getElementById('gnb_main').style.display = 'none';
+
 				for(let i=0; i<lnbList.length; i++) {
-					console.log(lnbList[i].querySelector('button').getAttribute('ref'))
-					lnbList[i].querySelector('button').getAttribute('ref') == url.split('_')[0]
+					lnbList[i].querySelector('a').getAttribute('ref') == url
 						? lnbList[i].classList.add('active')
 						: lnbList[i].classList.remove('active')
 				}
 				break;
+
 		}
 	}
 }

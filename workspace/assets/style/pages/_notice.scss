@@ -1,0 +1,14 @@
+.page_notice {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.notice_slider {
+		width: 80%;
+		height: 85%;
+
+		.slick-track {
+			width: 100%;
+		}
+	}
+}
