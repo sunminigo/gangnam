@@ -89,6 +89,14 @@ iframe body {
 		object-fit: none;
 	}
 }
+.sign_view {
+	display: none;
+	@include position(absolute, $t: 26px, $r: 26px);
+	width: 300px;
+	height: 300px;
+	background: #C4C4C4;
+	box-shadow: 0px 8px 16px -8px rgba(0, 0, 0, 0.25);
+}
 
 /* SLICK SLIDER CSS */
 .slick-slider {
@@ -161,3 +169,4 @@ iframe body {
 		}
 	}
 }
+

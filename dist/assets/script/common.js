@@ -90,6 +90,13 @@ $(function() {
 		autoScrollingStep: 1,
 		autoScrollingInterval: 25
 	});
+
+	/****************************************
+	 * SIGN LANGUAGE
+	 *****************************************/
+	$('.sign_language_box').click(function() {
+		$('.sign_view').fadeToggle('linear');
+	});
 });
 
 /****************************************
