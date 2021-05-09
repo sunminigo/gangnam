@@ -6,9 +6,11 @@
 		padding: 50px 0;
 
 		& > li {
-			display: flex;
 			margin-bottom: 10px;
 
+			a {
+				display: flex;
+			}
 			.floor {
 				text-align: center;
 				width: 170px;
