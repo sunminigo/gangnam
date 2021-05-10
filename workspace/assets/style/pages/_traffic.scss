@@ -236,8 +236,6 @@
 
 			.subway_img {
 				@include position(absolute, $t:0, $l: 0);
-				width: 123px;
-				height: 35px;
 
 				&.step_1 {left: 5%;}
 				&.step_1-1 {left: 16.5%;}
@@ -250,38 +248,46 @@
 				&.step_5 {left: 83%;}
 				&.step_5-1 {left: 95%;}
 			}
-		}
-		&.right {
-			.subway_img {
-			  transform: rotateY(180deg);
-
-				&.step_1 {left: 8%;}
-				&.step_1-1 {left: 29.5%;}
-				&.step_2 {left: 24.5%;}
-				&.step_2-1 {left: 33.5%;}
-				&.step_3 {left: 47%;}
-				&.step_3-1 {left: 53%;}
-				&.step_4 {left: 64%;}
-				&.step_4-1 {left: 73.5%;}
-				&.step_5 {left: 84%;}
-				&.step_5-1 {left: 93%;}
-			}
-			.platform_list:before {
-				transform: rotateY(0deg);
-			}
 			.mark_fast {
-				position: relative;
 				top: -45px;
 
 				&:before {
 					content: '급행';
-					@include position(absolute, $t:0, $l: 0);
+					@include position(absolute, $t: -5px, $r: -5px);
+					padding: 5px 10px;
 					font-weight: 800;
-					font-size: 14px;
+					font-size: 15px;
 					background: #FF0000;
 					border: 2px solid #FFFFFF;
 					border-radius: 40px;
+					color: #fff;
 					z-index: 10;
+				}
+			}
+		}
+		&.right {
+			.subway_step_box {
+				.subway_img {
+					transform: rotateY(180deg);
+
+					&.step_1 {left: 8%;}
+					&.step_1-1 {left: 29.5%;}
+					&.step_2 {left: 24.5%;}
+					&.step_2-1 {left: 33.5%;}
+					&.step_3 {left: 47%;}
+					&.step_3-1 {left: 53%;}
+					&.step_4 {left: 64%;}
+					&.step_4-1 {left: 73.5%;}
+					&.step_5 {left: 84%;}
+					&.step_5-1 {left: 93%;}
+				}
+				.mark_fast {
+					&:before {
+						transform: rotateY(180deg);
+					}
+				}
+				.platform_list:before {
+					transform: rotateY(0deg);
 				}
 			}
 		}
@@ -340,6 +346,14 @@
 		}
 	}
 }
+.line7 {
+	.platform_list {
+		&:before {
+			background: url("../images/banner/traffic/subway_line7.png") no-repeat 0 0 / 100% !important;
+		}
+	}
+}
+
 #map {
 	height: 97%;
 }
