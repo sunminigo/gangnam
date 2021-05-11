@@ -351,6 +351,12 @@
 		&:before {
 			background: url("../images/banner/traffic/subway_line7.png") no-repeat 0 0 / 100% !important;
 		}
+		li {
+			span {
+				border: 7px solid #697114;
+			}
+		}
+		
 	}
 }
 
