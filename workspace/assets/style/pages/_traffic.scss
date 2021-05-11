@@ -237,16 +237,16 @@
 			.subway_img {
 				@include position(absolute, $t:0, $l: 0);
 
-				&.step_1 {left: 5%;}
-				&.step_1-1 {left: 16.5%;}
-				&.step_2 {left: 22%;}
-				&.step_2-1 {left: 36.5%;}
-				&.step_3 {left: 40%;}
-				&.step_3-1 {left: 56.5%;}
-				&.step_4 {left: 61%;}
-				&.step_4-1 {left: 76.5%;}
-				&.step_5 {left: 83%;}
-				&.step_5-1 {left: 95%;}
+				&.step_1 {left: -2%;}
+				&.step_1-1 {left: 7%;}
+				&.step_2 {left: 17%;}
+				&.step_2-1 {left: 29%;}
+				&.step_3 {left: 39%;}
+				&.step_3-1 {left: 49%;}
+				&.step_4 {left: 58%;}
+				&.step_4-1 {left: 67%;}
+				&.step_5 {left: 76%;}
+				&.step_5-1 {left: 86%;}
 			}
 			.mark_fast {
 				top: -45px;
@@ -270,16 +270,16 @@
 				.subway_img {
 					transform: rotateY(180deg);
 
-					&.step_1 {left: 8%;}
-					&.step_1-1 {left: 29.5%;}
-					&.step_2 {left: 24.5%;}
-					&.step_2-1 {left: 33.5%;}
-					&.step_3 {left: 47%;}
-					&.step_3-1 {left: 53%;}
-					&.step_4 {left: 64%;}
-					&.step_4-1 {left: 73.5%;}
-					&.step_5 {left: 84%;}
-					&.step_5-1 {left: 93%;}
+					&.step_1 {left: 4%;}
+					&.step_1-1 {left: 22%;}
+					&.step_2 {left: 22%;}
+					&.step_2-1 {left: 31%;}
+					&.step_3 {left: 40%;}
+					&.step_3-1 {left: 51%;}
+					&.step_4 {left: 62%;}
+					&.step_4-1 {left: 73%;}
+					&.step_5 {left: 85%;}
+					&.step_5-1 {left: 95%;}
 				}
 				.mark_fast {
 					&:before {
@@ -319,7 +319,7 @@
 					border-radius: 50%;
 					z-index: 1;
 				}
-				&.fast {
+				&.transfer {
 					&:before {
 						background: #FF4020;
 						border: 8px solid #fff;
@@ -347,16 +347,46 @@
 	}
 }
 .line7 {
+	.subway_step_box {
+		.subway_img {
+			&.step_1 {left: 5%;}
+			&.step_1-1 {left: 16.5%;}
+			&.step_2 {left: 22%;}
+			&.step_2-1 {left: 36.5%;}
+			&.step_3 {left: 40%;}
+			&.step_3-1 {left: 56.5%;}
+			&.step_4 {left: 61%;}
+			&.step_4-1 {left: 76.5%;}
+			&.step_5 {left: 83%;}
+			&.step_5-1 {left: 95%;}
+		}
+	}
+	&.right {
+		.subway_step_box {
+			.subway_img {
+				&.step_1 {left: 8%;}
+				&.step_1-1 {left: 29.5%;}
+				&.step_2 {left: 24.5%;}
+				&.step_2-1 {left: 33.5%;}
+				&.step_3 {left: 47%;}
+				&.step_3-1 {left: 53%;}
+				&.step_4 {left: 64%;}
+				&.step_4-1 {left: 73.5%;}
+				&.step_5 {left: 84%;}
+				&.step_5-1 {left: 93%;}
+			}
+		}
+	}
+
 	.platform_list {
 		&:before {
 			background: url("../images/banner/traffic/subway_line7.png") no-repeat 0 0 / 100% !important;
 		}
 		li {
 			span {
-				border: 7px solid #697114;
+				border: 7px solid #697114 !important;
 			}
 		}
-		
 	}
 }
 
