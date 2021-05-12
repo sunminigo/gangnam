@@ -108,7 +108,6 @@ var nowZoomH = window.innerHeight;
 var multiple = 1.1
 
 function zoomIn() {
-	console.log(nowZoomW, nowZoomH)
 	if (nowZoomW == 1920) multiple = 1.1;
 	if (nowZoomW == 2112) multiple = 1.2;
 	if (nowZoomW == 2304) multiple = 1.3;
