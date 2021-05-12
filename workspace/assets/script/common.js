@@ -103,32 +103,47 @@ $(function() {
  * ZOOM IN OUT
  *****************************************/
 var nowZoom = 100;
+var nowZoomW = window.innerWidth;
+var nowZoomH = window.innerHeight;
+var multiple = 1.1
 
-function zoomOut() {
-	nowZoom = nowZoom - 10;
-	if(nowZoom <= 100) nowZoom = 100;
-	zooms();
-}
 function zoomIn() {
-	nowZoom = nowZoom + 10;
-	if(nowZoom >= 200) nowZoom = 200;
-	zooms();
-}
-function zooms() {
-	$('.zoom').css({
-		'width': nowZoom + "%",
-		'height': nowZoom + "%",
-		'zoom': nowZoom + "%",
-	})
-	$('#iframe_content').contents().find('body').css({
-		'width': nowZoom + "%",
-		'height': nowZoom + "%",
-		'zoom': nowZoom + "%",
-	})
-
-	if(nowZoom === 200) {
+	console.log(nowZoomW, nowZoomH)
+	if (nowZoomW == 1920) multiple = 1.1;
+	if (nowZoomW == 2112) multiple = 1.2;
+	if (nowZoomW == 2304) multiple = 1.3;
+	
+	nowZoomW = 1920 * multiple;
+	nowZoomH = 1080 * multiple;
+	
+	if(nowZoomW >= 2496) {
+		nowZoomW = 2496;
 		alert('더 이상 확대할 수 없습니다.');
 	}
+	if(nowZoomH >= 1404) nowZoomH = 1404;
+	zooms();
+}
+function zoomOut() {
+	nowZoom = 100;
+	nowZoomW = 1920;
+	nowZoomH = 1080;
+	multiple = 1;
+	
+	if(nowZoomW <= 1920) nowZoomW = 1920;
+	if(nowZoomH <= 1080) nowZoomH = 1080;
+	zooms();
+}
+
+function zooms() {
+	$('.zoom').css({
+		'width': nowZoomW + "px",
+		'height': nowZoomH + "px",
+		'zoom': multiple,
+	})
+	$('#iframe_content').contents().find('body').css({
+		'zoom': multiple,
+	})
+	
 }
 
 /****************************************

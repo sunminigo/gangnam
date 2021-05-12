@@ -1,13 +1,1 @@
-<svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M22.1719 23.5156H39.6406" stroke="#B9C1C6" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M12.7656 30.2344H30.2344" stroke="#B9C1C6" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M8.73438 36.9531H74.5781" stroke="#B9C1C6" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M53.0781 43.6719H77.2656" stroke="#A5A9AA" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M8.73438 43.6719H42.3281" stroke="#B9C1C6" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M40.9844 50.3906H75.9219" stroke="#A5A9AA" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M20.8281 57.1094H70.5469" stroke="#A5A9AA" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M34.2656 63.8281H57.1094" stroke="#A5A9AA" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M11.4219 50.3906H31.5781" stroke="#A5A9AA" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M38.2969 30.2344H47.7031" stroke="#B9C1C6" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M61.1406 30.2344H70.5469" stroke="#A5A9AA" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
-</svg>
+<svg width="86" height="86" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.172 23.516H39.64m-26.874 6.718h17.468m-21.5 6.719h65.844" stroke="#B9C1C6" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/><path d="M53.078 43.672h24.188" stroke="#A5A9AA" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/><path d="M8.734 43.672h33.594" stroke="#B9C1C6" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/><path d="M40.984 50.39h34.938m-55.094 6.72h49.719m-36.281 6.718h22.843M11.422 50.39h20.156" stroke="#A5A9AA" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/><path d="M38.297 30.234h9.406" stroke="#B9C1C6" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/><path d="M61.14 30.234h9.407" stroke="#A5A9AA" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/></svg>
