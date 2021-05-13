@@ -91,7 +91,7 @@ iframe body {
 }
 .sign_view {
 	display: none;
-	@include position-translate(absolute, $t: 50%, $r: 50%, $x: -50%, $y: -50%);
+	@include position-translate(absolute, $t: 50%, $l: 50%, $x: -50%, $y: -50%);
 	width: 600px;
 	height: 600px;
 	background: #C4C4C4;
