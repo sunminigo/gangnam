@@ -14,9 +14,11 @@
 		width: 689px;
 		padding: 27px 15px;
 		border-radius: 8px;
+		border: 1px solid #C4C4C4;
+		background: #fff;
 
 		& + .step_box {
-			margin-left: 10px;
+			margin-left: 16px;
 		}
 		.title {
 			font-size: 2.625rem; /* 42px */
