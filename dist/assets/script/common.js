@@ -96,6 +96,15 @@ $(function() {
 	 *****************************************/
 	$('.sign_language_box').click(function() {
 		$('.sign_view').fadeToggle('linear');
+		console.log($(this).find('img').attr('src'))
+		var src = ($(this).find('img').attr('src') == '../assets/images/icon/x.svg')
+			? '../assets/images/icon/hand.svg'
+			: '../assets/images/icon/x.svg'
+		var text = ($(this).find('span').text() == '수어 안내 닫기')
+			? '수어 안내'
+			: '수어 안내 닫기'
+		$(this).find('img').attr('src', src);
+		$(this).find('span').text(text);
 	});
 });
 

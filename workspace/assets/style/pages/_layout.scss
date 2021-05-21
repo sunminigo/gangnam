@@ -76,8 +76,6 @@ iframe body {
 	position: absolute;
 	right: 25px;
 	bottom: 25px;
-	font-weight: 800;
-	font-size: 19px;
 
 	img {
 		width: 127px;
@@ -87,6 +85,10 @@ iframe body {
 		box-shadow: 0px 18px 8px -3px rgba(0, 0, 0, 0.25);
 		border-radius: 78.5px;
 		object-fit: none;
+	}
+	span {
+		font-size: 19px;
+		font-weight: 800;
 	}
 }
 .sign_view {
