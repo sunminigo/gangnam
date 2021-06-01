@@ -21,6 +21,7 @@
 				height: 500px;
 			}
 			td {
+				width: 10%;
 				height: 80px;
 				padding: 14px;
 				border-top: 1px solid #C4C4C4;
@@ -29,6 +30,7 @@
 
 				&.title {
 					text-align: left;
+					width: 60%;
 				}
 			}
 		}
