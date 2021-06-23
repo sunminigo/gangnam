@@ -1,0 +1,416 @@
+/* 교통안내 */
+.page_traffic {
+	.traffic_box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		padding: 18px;
+	}
+}
+#bus {
+	.step_box {
+		text-align: center;
+		width: 689px;
+		height: 670px;
+		padding: 27px 15px;
+		border-radius: 8px;
+		border: 1px solid #C4C4C4;
+		background: #fff;
+
+		& + .step_box {
+			margin-left: 16px;
+		}
+		.title {
+			font-size: 2.625rem; /* 42px */
+			font-weight: bold;
+
+			p {
+				margin-top: 10px;
+				font-size: 1.5rem; /* 24px */
+				color: #666666;
+			}
+		}
+		.coming_soon_list {
+			display: flex;
+			align-items: center;
+			height: 72px;
+			margin: 25px 0 0;
+			padding: 17px 16px 16px;
+			background: #333333;
+			border-radius: 8px;
+			font-size: 2.125rem; /* 34px */
+			font-weight: 800;
+			overflow: hidden;
+
+			.info {
+				position: relative;
+				width: 130px;
+				margin-right: 20px;
+				color: #FFFFFF;
+
+				&:after {
+					content: "";
+					@include position-translate(absolute, $t: 50%, $r: -23px, $x: 0, $y: -50%);
+					width: 1px;
+					height: 28px;
+					margin: 0 15px;
+					background: #C4C4C4;
+				}
+			}
+
+			/* 흐르는 텍스트 */
+			.scrollingText {
+				text-align: left;
+				width: calc(100% - 130px);
+
+				.scrollableArea {
+					display: inline-block;
+					white-space: nowrap;
+
+					span {
+						display: inline-block;
+						padding: 0 15px;
+						color: #fff;
+					}
+				}
+				div.scrollingHotSpotLeft {
+					min-width: 75px;
+					width: 10%;
+					height: 100%;
+					background-repeat: repeat;
+					background-position: center center;
+					position: absolute;
+					z-index: 200;
+					left: 0;
+				}
+				div.scrollingHotSpotLeftVisible {
+					background-color: #fff;
+					background-repeat: no-repeat;
+					opacity: 0.35;/* Standard CSS3 opacity setting */
+					-moz-opacity: 0.35;/* Opacity for really old versions of Mozilla Firefox (0.9 or older) */
+					filter: alpha(opacity=35);/* Opacity for Internet Explorer. */
+					zoom: 1;
+				}
+				div.scrollingHotSpotRight {
+					min-width: 75px;
+					width: 10%;
+					height: 100%;
+					background-repeat: repeat;
+					background-position: center center;
+					position: absolute;
+					z-index: 200;
+					right: 0;
+				}
+				div.scrollingHotSpotRightVisible {
+					background-color: #fff;
+					background-repeat: no-repeat;
+					opacity: 0.35;
+					filter: alpha(opacity=35);
+					-moz-opacity: 0.35;
+					zoom: 1;
+				}
+				div.scrollWrapper {
+					position: relative;
+					overflow: hidden;
+					width: 100%;
+					height: 100%;
+				}
+				div.scrollableArea {
+					position: relative;
+					width: auto;
+					height: 100%;
+				}
+			}
+		}
+		.bus_list {
+			display: flex;
+			flex-wrap: wrap;
+			height: 72%;
+			margin-left: -10px;
+			overflow: hidden;
+			overflow-y: auto;
+			cl
+
+			li {
+				float: left;
+				display: table;
+				width: calc(50% - 10px);
+				height: 98px;
+				margin: 10px 0 0 10px;
+				border-radius: 4px;
+				border: 1px solid #646464;
+
+				&.bus_blue .number {background: #0074E6;}
+				&.bus_green .number {background: #00B43D;}
+				&.bus_light_green .number {background: #87BE3C;}
+				&.bus_red .number {background: #CB0031;}
+				&.active {
+					.time {
+						color: #FF0000;
+					}
+				}
+				& > p {
+					vertical-align: middle;
+					display: table-cell;
+					padding: 10px;
+				}
+				.number {
+					width: 131px;
+					height: 100%;
+					font-size: 2rem; /* 32px */
+					font-weight: 800;
+					color: #fff;
+				}
+				.time {
+					font-size: 1.875rem; /* 30px */
+					font-weight: bold;
+					background: #fff;
+				}
+			}
+		}
+	}
+}
+#subway {
+	flex-direction: column;
+
+	.step_box {
+		position: relative;
+		width: 1454px;
+		height: 390px;
+		padding: 20px;
+		background: #444444;
+		border-radius: 8px;
+
+		& + .step_box {
+			margin-top: 10px;
+		}
+		.title {
+			display: flex;
+			align-items: center;
+			font-size: 2rem; /* 32px */
+			font-weight: bold;
+			color: #fff;
+
+			img {
+				margin-right: 16px;
+			}
+		}
+	}
+	.subway_table {
+		@include position(absolute, $t: 10px, $r: 10px);
+		text-align: center;
+		border-bottom: 1px solid #AAAAAA;
+		width: 684px;
+		height: 135px;
+		color: #fff;
+
+		tbody {
+			td {
+				border-left: 0;
+				padding: 20px 27px 18px;
+				border-top: 1px solid #AAAAAA;
+				border-right: 1px solid #AAAAAA;
+				border-left: 1px solid #AAAAAA;
+				font-size: 1.75rem; /* 28px */
+				font-weight: 400;
+				color: #fff;
+
+				& + td {
+					border-left: 0px;
+				}
+				&.place {
+					text-align: left;
+				}
+				&.coming_soon {
+					&.active {
+						color: #FFC700;
+					}
+				}
+				p {
+					font-size: 1.75rem;
+					font-weight: 400;
+				}
+			}
+		}
+	}
+	.subway_info {
+		@include position-translate(absolute, $b: 15px, $l: 50%, $x: -50%, $y: 0);
+		width: 1263px;
+
+		.subway_step_box {
+			position: relative;
+			height: 40px;
+
+			.subway_img {
+				@include position(absolute, $t:0, $l: 0);
+
+				&.step_1 {left: -2%;}
+				&.step_1-1 {left: 7%;}
+				&.step_2 {left: 17%;}
+				&.step_2-1 {left: 29%;}
+				&.step_3 {left: 39%;}
+				&.step_3-1 {left: 49%;}
+				&.step_4 {left: 58%;}
+				&.step_4-1 {left: 67%;}
+				&.step_5 {left: 76%;}
+				&.step_5-1 {left: 86%;}
+			}
+			.mark_fast {
+				top: -45px;
+
+				&:before {
+					content: '급행';
+					@include position(absolute, $t: -5px, $r: -5px);
+					padding: 5px 10px;
+					font-weight: 800;
+					font-size: 15px;
+					background: #FF0000;
+					border: 2px solid #FFFFFF;
+					border-radius: 40px;
+					color: #fff;
+					z-index: 10;
+				}
+			}
+		}
+		&.right {
+			.subway_step_box {
+				.subway_img {
+					transform: rotateY(180deg);
+
+					&.step_1 {left: 4%;}
+					&.step_1-1 {left: 22%;}
+					&.step_2 {left: 22%;}
+					&.step_2-1 {left: 31%;}
+					&.step_3 {left: 40%;}
+					&.step_3-1 {left: 51%;}
+					&.step_4 {left: 62%;}
+					&.step_4-1 {left: 73%;}
+					&.step_5 {left: 85%;}
+					&.step_5-1 {left: 95%;}
+				}
+				.mark_fast {
+					&:before {
+						transform: rotateY(180deg);
+					}
+				}
+			}
+			.platform_list:before {
+				transform: rotateY(0deg);
+			}
+		}
+		.platform_list {
+			position: relative;
+			display: flex;
+			justify-content: space-around;
+
+			&:before {
+				content: "";
+				@include position(absolute, $t: 10px, $l: 0);
+				transform: rotateY(180deg);
+				width: 100%;
+				height: 44px;
+				background: url("../images/banner/traffic/subway_line.png") no-repeat 0 0 / 100%;
+				z-index: -1;
+			}
+			li {
+				font-weight: 800;
+
+				&:before {
+					content: "";
+					display: block;
+					width: 37px;
+					height: 37px;
+					margin: 0 auto 5px;
+					background: #fff;
+					border: 8px solid #444444;
+					border-radius: 50%;
+					z-index: 1;
+				}
+				&.transfer {
+					&:before {
+						background: #FF4020;
+						border: 8px solid #fff;
+					}
+				}
+				&.destination {
+					&:before {
+						content: "";
+						width: 37px;
+						height: 37px;
+						background: #FFDA00;
+					}
+				}
+				span {
+					display: inline-block;
+					padding: 6px 17px;
+					background: #FFFFFF;
+					border: 7px solid #F6C243;
+					border-radius: 60px;
+					font-size: 2.125rem; /* 34px */
+					font-weight: 800;
+				}
+			}
+		}
+	}
+}
+.line7 {
+	.subway_info {
+		.subway_step_box {
+			.subway_img {
+				&.step_1 {left: -2% !important;}
+				&.step_1-1 {left: 5% !important;}
+				&.step_2 {left: 13% !important;}
+				&.step_2-1 {left: 22% !important;}
+				&.step_3 {left: 31% !important;}
+				&.step_3-1 {left: 40% !important;}
+				&.step_4 {left: 50% !important;}
+				&.step_4-1 {left: 61% !important;}
+				&.step_5 {left: 72% !important;}
+				&.step_5-1 {left: 83% !important;}
+			}
+		}
+		&.right {
+			.subway_step_box {
+				.subway_img {
+					&.step_1 {left: 7.5% !important;}
+					&.step_1-1 {left: 18% !important;}
+					&.step_2 {left: 29% !important;}
+					&.step_2-1 {left: 37% !important;}
+					&.step_3 {left: 46% !important;}
+					&.step_3-1 {left: 55% !important;}
+					&.step_4 {left: 64% !important;}
+					&.step_4-1 {left: 74% !important;}
+					&.step_5 {left: 84% !important;}
+					&.step_5-1 {left: 94% !important;}
+				}
+			}
+		}
+	}
+
+	.platform_list {
+		&:before {
+			background: url("../images/banner/traffic/subway_line7.png") no-repeat 0 0 / 100% !important;
+		}
+		li {
+			span {
+				border: 7px solid #8D9A35 !important;
+			}
+		}
+	}
+}
+
+#map {
+	height: 97%;
+}
+
+.controlFontSize {
+	#bus {
+		.info {
+			width: 152px !important;
+		}
+	}
+	.scrollingText {
+		width: calc(100% - 152px) !important;
+	}
+}
